@@ -1,5 +1,6 @@
 import useCounter from "../../hooks/useCounter";
 import CountButton from "../button/CountButton";
+import CountValue from "../count/CountValue";
 
 const Counter = () => {
   const { count, increment, decrement } = useCounter(0);
@@ -8,7 +9,9 @@ const Counter = () => {
       <CountButton onClick={decrement} type="button">
         Decrement
       </CountButton>
-      <p>{count}</p>
+
+      <CountValue>{count}</CountValue>
+
       <CountButton onClick={increment} type="button">
         Increment
       </CountButton>
