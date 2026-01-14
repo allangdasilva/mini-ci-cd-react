@@ -10,10 +10,10 @@ const Counter = () => {
       <CountValue>{count}</CountValue>
 
       <div className={styles.countButtonWrapper}>
-        <CountButton variant="decrement" onClick={decrement} type="button">
+        <CountButton onClick={decrement} type="button">
           Decrement
         </CountButton>
-        <CountButton variant="increment" onClick={increment} type="button">
+        <CountButton onClick={increment} type="button">
           Increment
         </CountButton>
       </div>
