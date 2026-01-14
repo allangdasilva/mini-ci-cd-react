@@ -1,0 +1,11 @@
+.background {
+  min-height: 100dvh;
+  width: 100%;
+  position: fixed;
+  z-index: -10;
+}
+.backgroundRadial {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(125% 125% at 50% 90%, #fff 20%, #f9bbcb 100%);
+}
