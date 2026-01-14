@@ -7,9 +7,9 @@ interface ICountValue extends React.HTMLAttributes<HTMLParagraphElement> {
 
 const CountValue = (props: ICountValue) => {
   return (
-    <p className={styles.countValue} {...props}>
+    <span className={styles.countValue} {...props}>
       {props.children}
-    </p>
+    </span>
   );
 };
 
