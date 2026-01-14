@@ -1,0 +1,30 @@
+# Nome visível no GitHub.
+name: CI Pipeline
+
+on: # "O CI roda automaticamente."
+  push: # "Quando alguém faz push na main"
+    branches: [main]
+  pull_request: # "Quando alguém abre ou atualiza um pull request"
+# Por quê? queremos detectar erro antes de mergear código (mesclar código)
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest # Cria: uma máquina virtual Linux, do zero, limpa.
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Baixa seu código para a máquina virtual.
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 # Garante que o Node seja o mesmo para todo mundo. Evita: bugs, diferenças entre máquinas, erro “local passa, CI quebra”
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install # Instala dependências do projeto. Se quebrar aqui: problema no package.json
+
+      - name: Run tests
+        run: npm run test # Roda os testes. Se um teste falhar: o job para, o build não roda, o deploy não acontece (depois)
+
+      - name: Build project
+        run: npm run build # Garante que o projeto consegue ir para produção.
