@@ -1,12 +1,13 @@
 import Counter from "./components/counter/Counter";
+import Title from "./components/title/Title";
 import "./index.css";
 
 function App() {
   return (
-    <>
-      <h1>Counter App</h1>
+    <main className="main">
+      <Title>Counter App</Title>
       <Counter />
-    </>
+    </main>
   );
 }
 
