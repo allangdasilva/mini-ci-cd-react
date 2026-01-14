@@ -1,0 +1,22 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 32px;
+
+  width: 100%;
+  max-width: 380px;
+
+  border-radius: 24px;
+  box-shadow: -8px 8px 24px #ca849686;
+
+  padding: 32px;
+
+  background-color: #f9bbcb;
+}
+.countButtonWrapper {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}

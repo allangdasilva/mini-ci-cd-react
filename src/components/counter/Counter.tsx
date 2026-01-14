@@ -1,21 +1,23 @@
 import useCounter from "../../hooks/useCounter";
-import CountButton from "../button/CountButton";
-import CountValue from "../count/CountValue";
+import CountButton from "./button/CountButton";
+import CountValue from "./count/CountValue";
+import styles from "./Counter.module.css";
 
 const Counter = () => {
   const { count, increment, decrement } = useCounter(0);
   return (
-    <>
-      <CountButton onClick={decrement} type="button">
-        Decrement
-      </CountButton>
-
+    <div className={styles.counter}>
       <CountValue>{count}</CountValue>
 
-      <CountButton onClick={increment} type="button">
-        Increment
-      </CountButton>
-    </>
+      <div className={styles.countButtonWrapper}>
+        <CountButton variant="decrement" onClick={decrement} type="button">
+          Decrement
+        </CountButton>
+        <CountButton variant="increment" onClick={increment} type="button">
+          Increment
+        </CountButton>
+      </div>
+    </div>
   );
 };
 
