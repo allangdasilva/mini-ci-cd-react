@@ -1,7 +1,9 @@
 .title {
   font-family: Times, "Times New Roman", serif;
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 20vw, 4.5rem);
+  line-height: 1;
   font-style: italic;
   font-weight: normal;
+  text-align: center;
   color: #ffffff;
 }
